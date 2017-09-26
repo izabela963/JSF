@@ -10,27 +10,47 @@ public class ExerciciosController {
 	private Double valor2;
 	private String texto;
 	private String novoTexto;
-	private String numeroFormatado;
+	private Double numeroFormatado;
 	private Boolean java;
 	private Boolean php;
 	private Boolean python;
 	private Boolean cMaisMais;
-	private Integer numero;
+	private Double numero;
+	private Uf uf = Uf.PR;
+	private Sexo sexo;
 	
 	
-	public String getNumeroFormatado() {
+	public Sexo[] getListaSexo() {
+		return sexo.values();
+	}
+	
+	public Sexo getSexo() {
+		return sexo;
+	}
+
+
+	public Uf[] getListaUf() {
+		return uf.values();
+	}
+	
+	
+	public Uf getUf() {
+		return uf;
+	}
+
+	public Double getNumeroFormatado() {
 		return numeroFormatado;
 	}
 
-	public void setNumeroFormatado(String numeroFormatado) {
+	public void setNumeroFormatado(Double numeroFormatado) {
 		this.numeroFormatado = numeroFormatado;
 	}
 	
-	public Integer getNumero() {
+	public Double getNumero() {
 		return numero;
 	}
 
-	public void setNumero(Integer numero) {
+	public void setNumero(Double numero) {
 		this.numero = numero;
 	}
 
@@ -133,7 +153,7 @@ public class ExerciciosController {
 	}
 	
 	public void formatar() {
-		setNumeroFormatado(("R$ " + numero.toString() + ",00"));
+		numeroFormatado = numero;
 	}
 
 	
