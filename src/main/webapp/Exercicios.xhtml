@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 	<h:head>
-		<meta charset="ISO-8859-1"/>
-		<title>Insert title here</title>
+		<title>Exercícios JSF</title>
 	</h:head>
 	<h:body>
 		<h:form>
+			<strong><h:outputLabel value="EXERCÍCIO 1:"/></strong>
+			<br/><br/>
 			<h:inputText id="valor1" value="#{exerciciosController.valor1}"/>
 			<h:inputText id="valor2" value="#{exerciciosController.valor2}"/>
 			<br/>
@@ -16,6 +18,54 @@
 			<h:commandButton id="dividir" value=" / " action="#{exerciciosController.dividir}"/>
 			<br/>
 			<h:outputLabel value="RESULTADO = #{exerciciosController.resultado}"/>
+			<br/><br/>
+			
+			<strong><h:outputLabel value="EXERCÍCIO 2:"/></strong>
+			<br/><br/>
+			<h:inputText id="texto" value="#{exerciciosController.texto}"/>
+			<br/>
+			<h:commandButton id="maiuscula" value=" Maiúscula " action="#{exerciciosController.maiuscula}"/>
+			<h:commandButton id="minuscula" value=" Minúscula " action="#{exerciciosController.minuscula}"/>
+			<br/>
+			<h:outputLabel value="Alteração: #{exerciciosController.novoTexto}"/>
+			<br/><br/>
+			
+			<strong><h:outputLabel value="EXERCÍCIO 3:"/></strong>
+			<br/><br/>
+			<h:outputLabel value="Qual a sua linguagem de programação favorita?"/>
+			<br/>
+			<h:selectBooleanCheckbox id="JAVA" value="#{exerciciosController.java}">JAVA</h:selectBooleanCheckbox><br/>
+			<h:selectBooleanCheckbox id="PHP" value="#{exerciciosController.php}">PHP</h:selectBooleanCheckbox><br/>
+			<h:selectBooleanCheckbox id="Python" value="#{exerciciosController.python}">Python</h:selectBooleanCheckbox><br/>
+			<h:selectBooleanCheckbox id="CMaisMais" value="#{exerciciosController.cMaisMais}">C++</h:selectBooleanCheckbox>
+			<br/><br/>
+			
+			<strong><h:outputLabel value="EXERCÍCIO 4:"/></strong>
+			<br/><br/>
+			<h:outputLabel value="Selecione seu estado: "/>
+			<h:selectOneMenu id="parana">
+				<f:selectItem itemLabel="Paraná" itemValue="parana" />
+				<f:selectItem itemLabel="Santa Catarina" itemValue="santaCatarina" />
+				<f:selectItem itemLabel="Rio Grande do Sul" itemValue="rioGrandeSul" />
+			</h:selectOneMenu>
+			<br/><br/>
+			
+			<strong><h:outputLabel value="EXERCÍCIO 5:"/></strong>
+			<br/><br/>
+			<h:outputLabel value="Qual o seu sexo: "/>
+			<h:selectOneRadio>
+				<f:selectItem itemLabel="Feminino" itemValue="feminino" />
+				<f:selectItem itemLabel="Masculino" itemValue="masculino" />
+			</h:selectOneRadio>
+			<br/><br/>
+			
+			<strong><h:outputLabel value="EXERCÍCIO 6:"/></strong>
+			<br/><br/>
+			<h:inputText id="numero" value="#{exerciciosController.numero}"/>
+			<br/>
+			<h:commandButton id="formatar" value=" Formatar " action="#{exerciciosController.formatar}"/>
+			<br/>
+			<h:outputText value="Formatado: #{exerciciosController.numeroFormatado}"/>
 		</h:form>
 	</h:body>
 </html>
